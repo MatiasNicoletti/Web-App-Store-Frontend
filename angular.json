@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "LeFur"
+    }
+  },
+  "defaultProject": "LeFur",
+  "cli": {
+    "analytics": false
+  }
 }

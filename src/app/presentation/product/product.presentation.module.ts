@@ -4,6 +4,7 @@ import { ProductShowComponent } from './product-show/product-show.component';
 @NgModule({
     declarations: [ProductShowComponent],
     imports:[],
-    providers:[]
+    providers:[],
+    exports:[ProductShowComponent]
 })
 export class ProductPresentationModule{}

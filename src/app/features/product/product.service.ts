@@ -12,7 +12,11 @@ export class ProductService implements OnInit {
     constructor(private productHttpService: ProductHttpService) { }
 
     ngOnInit(): void {
-        
+        this.productHttpService.getAllProducts().pipe().subscribe((response: { status: string, results: number, result: any[] }) => {
+            this.productSubject.next([...response.result]);
+            this.productList = response.result;
+            
+        });
     }
     getProds(){
         this.productHttpService.getAllProducts().pipe().subscribe((response: { status: string, results: number, result: any[] }) => {
@@ -22,5 +26,5 @@ export class ProductService implements OnInit {
         });
         return this.productSubject.asObservable();
     }
-
+    
 }

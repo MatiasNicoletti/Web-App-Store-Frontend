@@ -8,10 +8,12 @@ import { ProductShowComponent } from './presentation/product/product-show/produc
 import { HttpModule } from './core/async/http/http.module';
 import { ProductHttpService } from './core/async/http/product-http/product-http.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './presentation/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
+    NavbarComponent, 
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,17 @@ import { Subscription } from 'rxjs';
 })
 export class ProductShowComponent implements OnInit {
   productSubscription:Subscription;
+  productList = [];
   constructor(private prodService: ProductService) { }
 
   ngOnInit(): void {
-    this.productSubscription = this.prodService.getProds().subscribe(response => {
-      // console.log(response); 
-    });
-    
+    this.getProds();
+  }
+
+  getProds(){
+    this.productSubscription = this.prodService.getProds().subscribe((response:[]) => {
+      this.productList = response;
+   });
   }
   
 }
